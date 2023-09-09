@@ -3,39 +3,64 @@ import React, { useState } from 'react';
 export default function App() {
 	const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: "Const (constanta)  qanday qiymat bo'ladi ?",
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: "Darajaga ko'taradigan qiymat", isCorrect: false },
+				{ answerText: "O'zgarmas qiymat", isCorrect: true },
+				{ answerText: "So'z bilan ishlaydi", isCorrect: false },
+				{ answerText: 'Butun sonli qiymat', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'Who is CEO of Tesla?',
+			questionText: "cout ni vazifasi nima ?",
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: "Kiritish operatori", isCorrect: false },
+				{ answerText: "Chiqarish operatori", isCorrect: true },
+				{ answerText: "Commentga olish", isCorrect: false },
+				{ answerText: "To'g'ri javob yo'q", isCorrect: false },
 			],
 		},
 		{
-			questionText: 'The iPhone was created by which company?',
+			questionText: "cin qiymat chiqarish uchunmi......?",
 			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
+				{ answerText: "Yo'q darajaga ko'tarish", isCorrect: false },
+				{ answerText: "Ha", isCorrect: false },
+				{ answerText: "Ha, hisoblash uchun ham", isCorrect: false },
+				{ answerText: "Yo'q qiymat kiritish uchun", isCorrect: true },
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: "&& bu qanday amal ?",
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
+				{ answerText: "(yoki,or) amali", isCorrect: false },
+				{ answerText: "(va,and) amali", isCorrect: true },
+				{ answerText: "ko'paytirish amali", isCorrect: false },
+				{ answerText: "bo'lish amali", isCorrect: false },
+			],
+		},
+		{
+			questionText: "|| bu qanday amal",
+			answerOptions: [
+				{ answerText: "(yoki,or) amali", isCorrect: true },
+				{ answerText: "(va,and) amali", isCorrect: false },
+				{ answerText: "ko'paytirish amali", isCorrect: false },
+				{ answerText: "bo'lish amali", isCorrect: false },
+			],
+		},
+		{
+			questionText: `int main(){  
+				int  a = 9; 
+				if(a<0){ 
+					 cout<< "Hello world"; } 
+				else{  
+					cout<< "Hello global"; }  
+				return 0 ;  
+			}`,
+			answerOptions: [
+				{ answerText: "Xatolik bor", isCorrect: false },
+				{ answerText: "Hello world", isCorrect: false },
+				{ answerText: "Hello global", isCorrect: true },
+				{ answerText: "Hech nima chiqmaydi", isCorrect: false },
 			],
 		},
 	];
@@ -63,7 +88,7 @@ export default function App() {
 					You scored {score} out of {questions.length}
 				</div>
 			) : (
-				<>
+				<div className='section'>
 					<div className='question-section'>
 						<div className='question-count'>
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
@@ -75,7 +100,7 @@ export default function App() {
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
-				</>
+				</div>
 			)}
 		</div>
 	);
